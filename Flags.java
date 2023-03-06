@@ -26,27 +26,26 @@ public class Flags
      * draw 3 stripe flag 
      * here the stripes will be the same size 
      */
-    public void doDrawThreeStripeFlagY(double left, double top, double width, double height) {
-        // test
+    public void doDrawThreeStripesY(double left, double top, double width, double height, Color color1, Color color2, Color color3) {
+        // linewidth is a constant 
         final int LINEWIDTH = 2;
         
-        // draw vertical flag
-        //  stripe 1 
-        UI.setColor(Color.red);
+        // vertical stripe 1 
+        UI.setColor(color1);
         UI.setLineWidth(LINEWIDTH);
         UI.fillRect(left, top, width, height);
         
-        left += width;  
+        left += width; 
         
-        //  stripe 2 
-        UI.setColor(Color.white);
+        // vertical stripe 2 
+        UI.setColor(color2);
         UI.setLineWidth(LINEWIDTH);
-        UI.fillRect(left, top, width, height);
+        UI.fillRect(left, 200, width, height);
         
         left += width;
         
-        // stripe 3 
-        UI.setColor(Color.blue);
+        // vertical stripe 3 
+        UI.setColor(color3);
         UI.setLineWidth(LINEWIDTH);
         UI.fillRect(left, top, width, height);
         
@@ -66,7 +65,7 @@ public class Flags
         // horizontal stripe 2 
         UI.setColor(color2);
         UI.setLineWidth(LINEWIDTH);
-        UI.fillRect(left, 200, width, height);
+        UI.fillRect(left, top, width, height);
         
         top += height;
         
@@ -114,9 +113,7 @@ public class Flags
     }
     
     public void drawFlags(){
-        //doDrawThreeStripeFlagY(0, 100, 200, 100);
-        doDrawThreeStripesX(0, 0, 2000, 200, Color.red, Color.white, Color.blue);
-        
-        //drawFlag();
+        doDrawThreeStripesY(0, 200, 100, 150, Color.red, Color.white, Color.blue);
+        doDrawThreeStripesX(0, 0, 300, 50, Color.red, Color.white, Color.blue);
     } 
 }
