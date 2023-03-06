@@ -1,16 +1,13 @@
 import ecs100.*;
 import java.awt.Color;
 /**
- * Write a description of class Flags here.
+ * Draws 3 striped flags
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author CC
+ * @version 06/03/23
  */
 public class Flags
 {
-    // instance variables 
-
-
     /**
      * Constructor for objects of class Flags
      */
@@ -23,7 +20,7 @@ public class Flags
     }
 
     /**
-     * draw 3 stripe flag 
+     * draw vertical 3 stripe flag 
      * here the stripes will be the same size 
      */
     public void doDrawThreeStripesY(double left, double top, double width, double height, Color color1, Color color2, Color color3) {
@@ -49,8 +46,12 @@ public class Flags
         UI.setLineWidth(LINEWIDTH);
         UI.fillRect(left, top, width, height);
         
-        } 
+    } 
     
+    /**
+     * draw horizontal 3 stripe flag 
+     * here all stripes are the same size
+     */
     public void doDrawThreeStripesX(double left, double top, double width, double height, Color color1, Color color2, Color color3) {
         // linewidth is a constant 
         final int LINEWIDTH = 2;
@@ -74,46 +75,23 @@ public class Flags
         UI.setLineWidth(LINEWIDTH);
         UI.fillRect(left, top, width, height);
 
-        }
-    
-    public void drawFlag() {
-        int left = 0;
-        int top = 0;
-        int width = 2000;
-        int height = 100; 
-        
-        UI.setColor(Color.red);
-        UI.setLineWidth(2);
-        UI.fillRect(left, top, width, height);
-        
-        top += height;
-        
-        UI.setColor(Color.white);
-        UI.setLineWidth(2);
-        UI.fillRect(left, top, width, height);
-        
-        top += height;
-        
-        UI.setColor(Color.blue);
-        UI.setLineWidth(2);
-        UI.fillRect(left, top, width, height);
-        
-        top += height;
-        
-        UI.setColor(Color.white);
-        UI.setLineWidth(2);
-        UI.fillRect(left, top, width, height);
-        
-        top += height;
-        
-        UI.setColor(Color.red);
-        UI.setLineWidth(2);
-        UI.fillRect(left, top, width, height);
-        
     }
     
+    /**
+     * run the draw three stripe functions to actually draw some flags 
+     */
     public void drawFlags(){
-        doDrawThreeStripesY(0, 200, 100, 150, Color.red, Color.white, Color.blue);
-        doDrawThreeStripesX(0, 0, 300, 50, Color.red, Color.white, Color.blue);
+        // france
+        doDrawThreeStripesY(0, 200, 100, 150, Color.blue, Color.white, Color.red);
+        
+        // romania 
+        doDrawThreeStripesY(350, 200, 100, 150, Color.blue, Color.yellow, Color.red);
+        
+        //germany 
+        doDrawThreeStripesX(0, 0, 300, 50, Color.black, Color.red, Color.yellow);
+        
+        // austria
+        doDrawThreeStripesX(350, 0, 300, 50, Color.red, Color.white, Color.red);
+        
     } 
 }
